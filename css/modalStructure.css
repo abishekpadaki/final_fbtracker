@@ -14,6 +14,9 @@
 	pointer-events: none;
 }
 
+.growthAreasModal{
+	padding:20;
+}
 .modalDialog:target {
 	opacity:1;
 	pointer-events: auto;

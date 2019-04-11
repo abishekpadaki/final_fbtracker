@@ -18,10 +18,12 @@
         }
         else{
             row.innerHTML += `
-            <div class="card mr-3">
+            <div class = "col-6">
+            <div class="card h-100 mr-3 reqHROthers">
                 <div class="card-body">
-                <h5>Request HR for registration</h5><br>
-                <button id="register" class="btn btn-primary">Register</button>
+                <h5>Request HR for registration</h5><br><br><br><br>
+                <button id="register" class="btn btn-danger">Register</button>
+            </div>
             </div>
             `    
         }    

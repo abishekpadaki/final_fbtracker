@@ -22,6 +22,11 @@
             color: #931f1d;
         }
 
+        #reqHROthers{
+            width: 100%!important;
+            max-width: 100%!important;
+        }
+
         a:hover{
             
             color: #60100e;
