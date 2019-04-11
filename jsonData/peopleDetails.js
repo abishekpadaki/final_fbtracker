@@ -6,6 +6,7 @@ var dataBase = [
         "EmailId": "john@gmail.com",
         "gender": "male",
         "password": "lochan123",
+        "profilePic":"https://cdn1.iconfinder.com/data/icons/avatars-55/100/avatar_profile_user_music_headphones_shirt_cool-512.png",
         "role":"HR" 
     },
     {
@@ -15,6 +16,7 @@ var dataBase = [
         "EmailId": "david@gmail.com",
         "gender": "male",
         "password": "david123",
+        "profilePic":"https://cdn1.iconfinder.com/data/icons/avatars-55/100/avatar_profile_user_music_headphones_shirt_cool-512.png",
         "role":"PM"
     },
     {
@@ -24,6 +26,7 @@ var dataBase = [
         "EmailId": "ross@gmail.com",
         "gender": "male",
         "password": "ross123",
+        "profilePic":"https://cdn1.iconfinder.com/data/icons/avatars-55/100/avatar_profile_user_music_headphones_shirt_cool-512.png",
         "role":"CT"
     },
     {
@@ -33,6 +36,7 @@ var dataBase = [
         "EmailId": "boss@gmail.com",
         "gender": "male",
         "password": "boss123",
+        "profilePic":"https://cdn1.iconfinder.com/data/icons/avatars-55/100/avatar_profile_user_music_headphones_shirt_cool-512.png",
         "role":"Mentor"
     },
     {
@@ -42,6 +46,7 @@ var dataBase = [
         "EmailId": "gooby@gmail.com",
         "gender": "male",
         "password": "gooby123",
+        "profilePic":"https://cdn1.iconfinder.com/data/icons/avatars-55/100/avatar_profile_user_music_headphones_shirt_cool-512.png",
         "role":"SuperAdmin"
     },
     
@@ -52,6 +57,7 @@ var dataBase = [
         "EmailId": "lochan@gmail.com",
         "gender": "male",
         "password": "loch123",
+        "profilePic":"https://cdn1.iconfinder.com/data/icons/avatars-55/100/avatar_profile_user_music_headphones_shirt_cool-512.png",
         "role":"SuperAdmin"
     },
     
@@ -62,6 +68,7 @@ var dataBase = [
         "EmailId": "anurag@gmail.com",
         "gender": "male",
         "password": "hakeem123",
+        "profilePic":"https://cdn1.iconfinder.com/data/icons/avatars-55/100/avatar_profile_user_music_headphones_shirt_cool-512.png",
         "role":"Trainer"
     },
     
