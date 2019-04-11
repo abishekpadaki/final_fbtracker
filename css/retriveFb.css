@@ -1,0 +1,49 @@
+#feedBacks {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
+}
+
+#feedBacks td,
+#feedBacks th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#feedBacks tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#feedBacks tr:hover {
+    background-color: #ddd;
+}
+
+#feedBacks th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #3498DB;
+    color: white;
+}
+
+
+
+.label {
+    margin-left: 10%;
+    color: white;
+    padding: 8px;
+    font-family: Arial;
+    background-color: #2196F3;
+}
+.row{
+    margin-top:5%;
+}
+.text{
+    color: #666;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+}

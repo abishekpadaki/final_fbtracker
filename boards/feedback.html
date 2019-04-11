@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Feedback Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <script src="../jsonData/feedBackData.js"></script>
+        <script src="../jsonData/peopleDetails.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Content here -->
+        <div><h1>Feedback Form</h1></div>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="oracleId">Oracle ID:</label>
+                <input type="text" class="form-control" id="oracleId" placeholder="Oracle id of feedback recepient"
+                    readonly>
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Name of feedback recepient" readonly>
+            </div>
+            <div class="form-group">
+                <label for="coreValues">Rating for core values (Max - 5, Min - 1):</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="clientFocusedDelivery">Client Focused Delivery</label>
+                    </div>
+                    <select class="custom-select" id="clientFocusedDelivery">
+                        <!-- <option value="" selected>--Choose Rating--</option> -->
+                        <option value="5" selected>5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="creativity">Creativity</label>
+                    </div>
+                    <select class="custom-select" id="creativity">
+                        <!-- <option value="" selected>--Choose Rating--</option> -->
+                        <option value="5" selected>5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="leadership">Leadership</label>
+                    </div>
+                    <select class="custom-select" id="leadership">
+                        <!-- <option value="" selected>--Choose Rating--</option> -->
+                        <option value="5" selected>5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="openess">Openess</label>
+                    </div>
+                    <select class="custom-select" id="openess">
+                        <!-- <option value="" selected>--Choose Rating--</option> -->
+                        <option value="5" selected>5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="peopleGrowth">People Growth</label>
+                    </div>
+                    <select class="custom-select" id="peopleGrowth">
+                        <!-- <option value="" selected>--Choose Rating--</option> -->
+                        <option value="5" selected>5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="relationships">Relationships</label>
+                    </div>
+                    <select class="custom-select" id="relationships">
+                        <!-- <option value="" selected>--Choose Rating--</option> -->
+                        <option value="5" selected>5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="technicalSkills">Mention technical skills seperated by commas:</label>
+                <textarea class="form-control" id="technicalSkills" rows="2"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="softSkills">Mention soft skills seperated by commas:</label>
+                <textarea class="form-control" id="softSkills" rows="2"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="growthAreas">Growth Areas:</label>
+                <textarea class="form-control" id="growthAreas" rows="2"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="feedback">Suggestions/Feedback:</label>
+                <textarea class="form-control" id="feedback" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="overallRating">Overall Rating (Max - 5, Min - 1):</label>
+                <select id="overallRating" class="form-control">
+                    <!-- <option value="" selected>--Choose Rating--</option> -->
+                    <option value="5" selected>5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <script src="../js/feedBack.js"></script>
+</body>
+
+</html>

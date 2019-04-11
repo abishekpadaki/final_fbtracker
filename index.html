@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>    
+        <div class="row" style="padding: 0px;">
+            <div class="col-8" style="padding: 0;">
+                <img src="assets/landingPage_Image.jpg" class="img-fluid" alt="Responsive image">
+            </div>
+            <div class="col" style="padding: 15px;">
+                <center><img id="logo" src="assets/Sapient Logo_Feedback Tracker.png" class="img-fluid"
+                        alt="Responsive image"></center>
+                <form action="#" method="POST">
+                    <!-- <form> -->
+                    <div class="form-group">
+                        <label for="loginId">Login ID:</label>
+                        <input type="text" class="form-control" id="loginId" aria-describedby="loginHelp"
+                            pattern="^\d{6}$" title="ID should be of 6 digits." placeholder="Login">
+                        <small id="loginHelp" class="form-text text-muted">We'll never share your id with anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password:</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Password"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                    </div>
+                    <input type="button" value="Login" class="btn btn-primary" id="loginButton"
+                        onclick=""></input>
+                    <button type="submit" class="btn btn-primary">Forgot Password?</button>
+                </form>
+            </div>
+        </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="./jsonData/peopleDetails.js"></script>
+    <script src="./app.js"></script>
+    <script src="./js/preventBack.js"></script>
+</body>
+
+</html>
