@@ -1,7 +1,7 @@
 (() => {
 
     let oracleId = sessionStorage.getItem('OracleId');
-    let role = sessionStorage.getItem('role');
+    let role = sessionStorage.getItem('Role');
 
     let feedBack = window.feedBack;
     let dataBase = window.dataBase;
@@ -24,31 +24,32 @@
         }   
     }
 
-    let addModal = (i)=>{
-        let modal = document.getElementsByClassName('modal')[i];
-        let btn = document.getElementsByClassName('modalBtn')[i];
+    let addModal = (j)=>{
+        let modal = document.getElementsByClassName('modal')[j];
+        let btn = document.getElementsByClassName('modalBtn')[j];
         let closeBtn = document.getElementsByClassName("close");
         btn.addEventListener( 'click', (event) => {
             modal.style.display = "block";
             event.stopPropagation();
         });
-        closeBtn[i].addEventListener('click', () => {
+        closeBtn[j].addEventListener('click', () => {
             modal.style.display = "none";
             event.stopPropagation();
         });
-        window.onclick = (event)=>{
+        window.addEventListener('click',()=>{
             // console.log(event.target,modal);
             if (event.target == modal) {                
                 modal.style.display = "none";
-                event.stopPropagation();
             }
-            
-        }
+            event.stopPropagation();
+        });
     }
 
+    console.log(role);
+
     if (role == "SuperAdmin") {
-        document.getElementById('cardTitle').innerHTML = `<p><b>Feedback from &nbsp;</b>${details.FirstName}</p>`;
-        addFeedBackContent(feedBack);
+        document.getElementById('cardTitle').innerHTML = `<p><b>Feedback from &nbsp;</b>${feedBack[0].FirstName}</p>`;
+        addFeedBackContent(feedBack);        
         addModal(0);
         addModal(1);
     } else {

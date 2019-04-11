@@ -3,7 +3,7 @@
     let dataBase = window.dataBase;
     let feedBack = window.feedBack;
     // let requesterOracleId = sessionStorage.getItem('requesterOracleId');
-    let requestedForOracleId = sessionStorage.getItem('requestedForOracleId')
+    let requestedForOracleId = sessionStorage.getItem('requestedForOracleId');
 
     let value = dataBase.find((val) => {
         return val.OracleId == requestedForOracleId;
@@ -21,14 +21,20 @@
     `
 
     let table = document.getElementById('feedBacks');
+    console.log(feedBack[0]);
     for (let fb of feedBack) {
+        console.log(fb.OracleId,value.OracleId);
         if (fb.OracleId == value.OracleId) {
             table.innerHTML += `
                 <tr>
                 <td>${fb.OracleId}</td>
-                <td>${fb.GrowthAreas}</td>
-                <td>${fb.Suggestions}</td>
-                <td>${fb.Ratings}</td>
+                <td>${fb.ClientFocusedDelivery}</td>
+                <td>${fb.Creativity}</td>
+                <td>${fb.OverallRating}</td>
+                <td>${fb.Leadership}</td>
+                <td>${fb.Openess}</td>
+                <td>${fb.PeopleGrowth}</td>
+                <td>${fb.Relationships}</td>
                 </tr>
             `
         }
