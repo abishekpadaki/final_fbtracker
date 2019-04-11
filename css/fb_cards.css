@@ -6,20 +6,24 @@
 }
 
 b{
-    color: lightseagreen;
+    color: #931f1d;
 }
 
 .fb_text{
     padding: 8px;
     text-align: center;
-    border-top: gray 1px solid;
-    border-bottom: gray 1px solid;
+    border-top: #931f1d 1px solid;
+    border-bottom: #931f1d 1px solid;
     font-family: 'Roboto';
+}
+
+.fb_card_rating > b{
+  color:#931f1d;
 }
 
 .fb_card_rating{
    
-   
+    color:#931f1d;   
     float: right;
 }
 

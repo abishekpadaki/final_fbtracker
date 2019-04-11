@@ -8,3 +8,14 @@
     height: auto;
     margin-bottom: 20%;
 }
+
+ .btn-danger {
+    color: #fff;
+    background-color: #f64450;
+    border-color: #f64450;
+    margin-right: 6%;
+}
+
+.btn-danger:hover { 
+    background-color: #931f1d;
+  }
