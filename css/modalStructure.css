@@ -19,6 +19,21 @@
 	pointer-events: auto;
 }
 
+#reqRegModalX{
+	margin-left:-5px; 
+	/* align-content: space-between ; */
+}
+
+#radioOnModalTop{
+	text-align: left;
+}
+
+#closeModal{
+	margin: -1rem -5rem -1rem auto!important; 
+}
+.radioOnModal{
+	margin-left: 20px; 
+}
 .modalDialog > div {
 	width: 400px;
 	position: relative;
@@ -32,7 +47,8 @@
 }
 
 .close {
-	background: #606061;
+	background: #931f1d!important;
+	opacity:1!important;
 	color: #FFFFFF;
 	line-height: 25px;
 	position: absolute;

@@ -41,10 +41,10 @@
 
       notificationsCnt.innerHTML += `
             <span class="requestCnt">
-                <b>${dataBase[requester].FirstName}</b>
+                <b class="redText">${dataBase[requester].FirstName}</b>
                 <p hidden>${dataBase[requester].OracleId}</p>
                 requested Feedback for
-                <b>${dataBase[requestedFor].FirstName}</b>
+                <b class="redText">${dataBase[requestedFor].FirstName}</b>
                 <p hidden>${dataBase[requestedFor].OracleId}</p>
             </span>
             <hr>`;
