@@ -40,8 +40,9 @@
             // console.log(event.target,modal);
             if (event.target == modal) {                
                 modal.style.display = "none";
+                event.stopPropagation();
             }
-            event.stopPropagation();
+            
         }
     }
 
