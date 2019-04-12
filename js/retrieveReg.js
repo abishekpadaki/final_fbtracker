@@ -21,9 +21,9 @@
         // console.log(requester);
         notificationsCnt.innerHTML += `
           <span class="requestCnt">
-            <b>${requester.FirstName}</b>
+            <b class="redText">${requester.FirstName}</b>
               requested Registrations for
-              <b>${i.FirstName}  ${i.LastName}</b>
+              <b class="redText">${i.FirstName}  ${i.LastName}</b>
               <p hidden>${i.OracleId}</p>
           </span>
           <hr>

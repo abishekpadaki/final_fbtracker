@@ -8,20 +8,22 @@
         if(role == "PM") {
         row.innerHTML += `
         <div class = "col-6">
-            <div class="card mr-3" style="width:430px; height:230px;">
+            <div class="card h-100 mr-3"> <!--style="width:430px; height:230px; -->
                 <div class="card-body">
-                <h5>Request HR for registration</h5>  
-                <button id="register" class="btn btn-primary">Register</button>
+                <h5>Request HR for registration</h5>  <br><br><br><br>
+                <button id="register" class="btn btn-danger">Register</button>
             </div>
         </div>
         `
         }
         else{
             row.innerHTML += `
-            <div class="card mr-3">
+            <div class = "col-6">
+            <div class="card h-100 mr-3 reqHROthers">
                 <div class="card-body">
-                <h5>Request HR for registration</h5>  
-                <button id="register" class="btn btn-primary">Register</button>
+                <h5>Request HR for registration</h5><br><br><br><br>
+                <button id="register" class="btn btn-danger">Register</button>
+            </div>
             </div>
             `    
         }    
@@ -47,8 +49,8 @@
     <div class="modal-header">
         <h5 class="modal-title" id="registerModalLabel">Enter registration details
         </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
+        <button type="button" id="closeModal" class="close" data-dismiss="modal" aria-label="Close">
+            <span id="reqRegModalX" aria-hidden="true">×</span>
         </button>
     </div>
     <div class="modal-body">
@@ -68,12 +70,6 @@
             </div>
     
             <div class="form-group">
-                <input type="radio" name="gender" value="male">Male
-                <input type="radio" name="gender" value="female">Female
-                <input type="radio" name="gender" value="others">Others
-            </div>
-    
-            <div class="form-group">
                 <!-- <label for="firstName">Oracle ID:</label> -->
                 <input type="password" class="form-control" id="password" placeholder="Password">
             </div>
@@ -82,8 +78,16 @@
                 <!-- <label for="firstName">Oracle ID:</label> -->
                 <input type="password" class="form-control" id="confirmPassword" placeholder=" Confirm password">
             </div>
+
+            <div class="form-group" id="radioOnModalTop">
+                <span>Select your gender:</span>
+                <input class="radioOnModal" type="radio" name="gender" value="male">Male
+                <input class="radioOnModal" type="radio" name="gender" value="female">Female
+                <input class="radioOnModal" type="radio" name="gender" value="others">Others
+            </div>
+
             <!-- <button class="btn btn-danger" onclick="resetFunction()">Reset</button> -->
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-danger">Register</button>
     </div>
     <div class="modal-footer">
         <!-- <button type="button" class="btn btn-secondary"

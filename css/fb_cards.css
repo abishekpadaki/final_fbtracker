@@ -5,21 +5,31 @@
     
 }
 
-b{
-    color: lightseagreen;
+.requestSaCard{
+  padding-right: 0px;
+  padding-left: 0px;
+  max-width: 45%;
 }
 
 .fb_text{
     padding: 8px;
     text-align: center;
-    border-top: gray 1px solid;
-    border-bottom: gray 1px solid;
+    border-top: #931f1d 1px solid;
+    border-bottom: #931f1d 1px solid;
     font-family: 'Roboto';
+}
+
+.fb_card_rating > b{
+  color:#931f1d;
+}
+
+#cardTitle>p>b{
+  color:#931f1d;
 }
 
 .fb_card_rating{
    
-   
+    color:#931f1d;   
     float: right;
 }
 
@@ -51,9 +61,9 @@ b{
   .modal-content {
     background-color: #fefefe;
     margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+    /* padding: 20px; */
+    /* border: 1px solid #888; */
+    width: 90%;
   }
   
   /* The Close Button */

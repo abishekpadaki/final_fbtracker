@@ -7,6 +7,7 @@
     <title>Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link href="https://fonts.googleapis.com/css?family=Hind+Madurai:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -21,7 +22,7 @@
 
     <script src="../jsonData/feedBackData.js"></script>
     <script src="../jsonData/peopleDetails.js"></script>
-        <script src="../jsonData/requestDb.js"></script>
+    <script src="../jsonData/requestDb.js"></script>
     <script src="../jsonData/registration.js"></script>
 
 </head>
@@ -30,7 +31,7 @@
     <nav class="navbar">
         <div class="row col-md-12" style="height:100px;">
             <div class="col-md-3">
-                <a href="#" class="pull-left"><img src="../assets/publicis-sapient1.png"></a>
+                <a href="#" class="pull-left"><img id="logo" src="../assets/publicis-sapient1.png"></a>
             </div>
 
             <div class="search_bar col-md-5">
@@ -41,14 +42,15 @@
                         <input type="text" class="form-control" id="searchTxt" placeholder="Search Employee ...">
                     </div>
                     <div>
-                        <button type="submit" onclick="searchFunction()" onsubmit="searchFunction()" class="btn btn-primary ml-3">Enter</button>
+                        <button type="submit" onclick="searchFunction()" onsubmit="searchFunction()"
+                            class="btn btn-danger ml-3" id="enterButton">Enter</button>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4 mt-4">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-8">
                         <div class="dropdown">
                             <button class="btn btn-primary notification" id="dropDownBtn">
                                 <i class="fas fa-bell"></i>
@@ -61,8 +63,8 @@
                         </div>
                         <div class="dropdown ml-2"></div>
                     </div>
-                    <a href="../index.html"><i class="fas fa-sign-out-alt fa-lg"></i>
-                        Log Out</a>
+                    <span id="logout"><a href="../index.html"><i class="fas fa-sign-out-alt fa-lg"></i>
+                            Log Out</a></span>
                 </div>
 
             </div>
@@ -75,21 +77,22 @@
                 <div class=".h-card">
                     <img src="../assets/avatar2.png" style="width:200px;height: 210px;">
                 </div>
-                <div class="mt-4">
-                    <b><span class="name" style="color:rgb(36, 41, 46)">
+                <span id="#lowerLeftText"></span>
+                <div class="mt-4" id="name">
+                    <b><span class="name" >
                         </span></b>
                 </div>
                 <div>
-                    <span class="oracleId" style="color:rgb(102, 102, 102)">
+                    <span class="oracleId" >
                     </span>
                 </div>
                 <div>
-                    <span class="roleType" style="color:rgb(102, 102, 102)">
+                    <span class="roleType" >
                     </span>
                 </div>
             </div>
             <div class="col-9">
-                <div class="card card_one col-md-8" style="width: 50rem;">
+                <div class="card card_one col-md-8">
                     <div class="card-body" id="card">
                         <div class="row fb_card_title">
                             <p id="cardTitle">
@@ -106,23 +109,24 @@
                             <div class="modal">
                                 <div class="modal-content">
                                     <div class="close">&times;</div>
-                                    <h4 style="color: red;">Growth Areas</h4>
+                                    <h4>Growth Areas</h4>
                                 </div>
                             </div>
 
                             <div class="modal">
-                                <div class="modal-content">
+                                <div class="growthAreasModal">
                                     <div class="close">&times;</div>
-                                    <h4 style="color: red;">Top 5 stuff</h4>
+                                    <h4>Top 5 stuff</h4>
                                 </div>
                             </div>
                             <div class="modal">
                                 <div class="modal-content">
                                 </div>
-                            </div>                        
+                            </div>
                         </div>
                         <div class="row fb_card_rating">
-                            <b>Rating:&nbsp;</b> <i class="far fa-star "></i> &nbsp;<b id="rating"></b>
+                            <b>Rating:&nbsp;</b>
+                            <!--<i class="far fa-star "></i> &nbsp;--><b id="rating"></b>
                         </div>
                     </div>
                 </div>
@@ -130,18 +134,19 @@
             </div>
 
         </div>
-        <div class="row mt-4">
-            <div class="col-3">
-                <div class="mt-4">
-                    <b><span style="color:rgb(36, 41, 46)"> Count Of Candidates
+        <div class="row mt-4" id="lowerRow">
+            <div class="col-3" id="lowerRowText">
+                <div class="mt-4" id="lowerRowCountOfCandidates">
+                    <b><span> COUNT OF CANDIDATES
                         </span></b>
                 </div>
-                <div class="mt-4">
-                    <b><span class="fBgiven" style="color:rgb(102, 102, 102)"> Feed Back Given
+                
+                <div class="mt-4 lowerRowLeftFeedbackGivenCountPlusGotFeedbackCount">
+                    <b><span class="fBgot"  > GOT FEEDBACK FROM
                         </span></b>
                 </div>
-                <div class="mt-4">
-                    <b><span class="fBgot" style="color:rgb(102, 102, 102)"> Got Feed Back from
+                <div class="mt-4 lowerRowLeftFeedbackGivenCountPlusGotFeedbackCount">
+                    <b><span class="fBgiven " > FEEDBACK GIVEN
                         </span></b>
                 </div>
             </div>
@@ -159,15 +164,12 @@
     <script src="../js/retrieveReg.js"></script>
     <script src="../js/reqsa.js"></script>
     <script src="../js/reqreg.js"></script>
-	<script src="../js/search.js"></script>
+    <script src="../js/search.js"></script>
     <!-- <script language="JavaScript">
         javascript: window.history.forward(1);
     </script> -->
     <!-- <script src="../js/preventBack.js"></script> -->
-    
+
 </body>
 
 </html>
-
-
-
