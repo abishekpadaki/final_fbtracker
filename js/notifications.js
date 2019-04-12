@@ -4,7 +4,7 @@
   let role = sessionStorage.getItem("Role");
   let oracleId = sessionStorage.getItem("OracleId");
 
-  let requests = window.requests;
+  let requests = JSON.parse(localStorage.getItem('requests'));
 
   let notificationsCnt = document.getElementsByClassName('dropdown-content')[0];
 
@@ -21,6 +21,12 @@
       return val.OracleId == oracleId && val.role == role;
     });
     return value.notifications;
+  }
+  let updateData = (role,oracleId,notifications) => {
+    let i =  requests.findIndex((val) => {
+      return val.OracleId == oracleId && val.role == role;
+    });
+    requests[i].notifications = notifications
   }
 
   let notifications = getData(role, oracleId);
@@ -51,7 +57,8 @@
     }
 
     let badge = document.getElementsByClassName('badge')[0];
-    badge.style.visibility = "visible";
+    if(notifications.Requester.length)
+      badge.style.visibility = "visible";
     badge.innerHTML = notifications.Requester.length;
   }
 
@@ -94,7 +101,11 @@
       notifications.Requester.splice(index, 1);
       notifications.RequestedFor.splice(index, 1);
 
-      updateNotifications(notifications);
+      updateData(role,oracleId,notifications);
+
+      localStorage.setItem('requests',JSON.stringify(requests));
+
+      // updateNotifications(notifications);
 
       document.location.href = link;
     }

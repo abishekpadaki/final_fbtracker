@@ -21,7 +21,7 @@
     <div class="container">
         <!-- Content here -->
         <div><h1>Feedback Form</h1></div>
-        <form action="" method="post">
+        <form >
             <div class="form-group">
                 <label for="oracleId">Oracle ID:</label>
                 <input type="text" class="form-control" id="oracleId" placeholder="Oracle id of feedback recepient"
@@ -37,7 +37,7 @@
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="clientFocusedDelivery">Client Focused Delivery</label>
                     </div>
-                    <select class="custom-select" id="clientFocusedDelivery">
+                    <select class="custom-select" id="clientFocusedDelivery" required>
                         <!-- <option value="" selected>--Choose Rating--</option> -->
                         <option value="5" selected>5</option>
                         <option value="4">4</option>
@@ -50,7 +50,7 @@
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="creativity">Creativity</label>
                     </div>
-                    <select class="custom-select" id="creativity">
+                    <select class="custom-select" id="creativity" required>
                         <!-- <option value="" selected>--Choose Rating--</option> -->
                         <option value="5" selected>5</option>
                         <option value="4">4</option>
@@ -63,7 +63,7 @@
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="leadership">Leadership</label>
                     </div>
-                    <select class="custom-select" id="leadership">
+                    <select class="custom-select" id="leadership" required>
                         <!-- <option value="" selected>--Choose Rating--</option> -->
                         <option value="5" selected>5</option>
                         <option value="4">4</option>
@@ -76,7 +76,7 @@
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="openess">Openess</label>
                     </div>
-                    <select class="custom-select" id="openess">
+                    <select class="custom-select" id="openess" required>
                         <!-- <option value="" selected>--Choose Rating--</option> -->
                         <option value="5" selected>5</option>
                         <option value="4">4</option>
@@ -89,7 +89,7 @@
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="peopleGrowth">People Growth</label>
                     </div>
-                    <select class="custom-select" id="peopleGrowth">
+                    <select class="custom-select" id="peopleGrowth" required>
                         <!-- <option value="" selected>--Choose Rating--</option> -->
                         <option value="5" selected>5</option>
                         <option value="4">4</option>
@@ -102,7 +102,7 @@
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="relationships">Relationships</label>
                     </div>
-                    <select class="custom-select" id="relationships">
+                    <select class="custom-select" id="relationships" required>
                         <!-- <option value="" selected>--Choose Rating--</option> -->
                         <option value="5" selected>5</option>
                         <option value="4">4</option>
@@ -114,26 +114,26 @@
             </div>
             <div class="form-group">
                 <label for="technicalSkills">Mention technical skills seperated by commas:</label>
-                <textarea class="form-control" id="technicalSkills" rows="2"></textarea>
+                <textarea class="form-control" id="technicalSkills" rows="2" required></textarea>
             </div>
 
             <div class="form-group">
                 <label for="softSkills">Mention soft skills seperated by commas:</label>
-                <textarea class="form-control" id="softSkills" rows="2"></textarea>
+                <textarea class="form-control" id="softSkills" rows="2" required></textarea>
             </div>
 
             <div class="form-group">
                 <label for="growthAreas">Growth Areas:</label>
-                <textarea class="form-control" id="growthAreas" rows="2"></textarea>
+                <textarea class="form-control" id="growthAreas" rows="2" required></textarea>
             </div>
 
             <div class="form-group">
                 <label for="feedback">Suggestions/Feedback:</label>
-                <textarea class="form-control" id="feedback" rows="3"></textarea>
+                <textarea class="form-control" id="feedback" rows="3" required></textarea>
             </div>
             <div class="form-group">
                 <label for="overallRating">Overall Rating (Max - 5, Min - 1):</label>
-                <select id="overallRating" class="form-control">
+                <select id="overallRating" class="form-control" required>
                     <!-- <option value="" selected>--Choose Rating--</option> -->
                     <option value="5" selected>5</option>
                     <option value="4">4</option>
@@ -142,7 +142,7 @@
                     <option value="1">1</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button id="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 

@@ -1,5 +1,4 @@
 (()=>{
-
     "use strict"
     let role = sessionStorage.getItem("Role");
 
@@ -54,45 +53,37 @@
         </button>
     </div>
     <div class="modal-body">
+        <form>
             <div class="form-group">
-                <!-- <label for="firstName">Oracle ID:</label> -->
-                <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
             </div>
     
             <div class="form-group">
-                <!-- <label for="firstName">Oracle ID:</label> -->
-                <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
             </div>
     
             <div class="form-group">
-                <!-- <label for="firstName">Oracle ID:</label> -->
-                <input type="email" class="form-control" id="email" placeholder="Email id">
+                <input type="email" class="form-control" id="email" placeholder="Email id" required>
+            </div>
+    
+            <div class="form-group" id ="gender" required>
+                <input type="radio" name="gender" value="male">Male
+                <input type="radio" name="gender" value="female">Female
+                <input type="radio" name="gender" value="others">Others
             </div>
     
             <div class="form-group">
-                <!-- <label for="firstName">Oracle ID:</label> -->
-                <input type="password" class="form-control" id="password" placeholder="Password">
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
             </div>
     
             <div class="form-group">
-                <!-- <label for="firstName">Oracle ID:</label> -->
                 <input type="password" class="form-control" id="confirmPassword" placeholder=" Confirm password">
             </div>
-
-            <div class="form-group" id="radioOnModalTop">
-                <span>Select your gender:</span>
-                <input class="radioOnModal" type="radio" name="gender" value="male">Male
-                <input class="radioOnModal" type="radio" name="gender" value="female">Female
-                <input class="radioOnModal" type="radio" name="gender" value="others">Others
-            </div>
-
-            <!-- <button class="btn btn-danger" onclick="resetFunction()">Reset</button> -->
-            <button type="submit" class="btn btn-danger">Register</button>
+            <button type="submit" class="btn btn-primary Register">Register</button>
+        </form>    
     </div>
     <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-secondary"
-            data-dismiss="modal">Close</button> -->
-        <button class="btn btn-danger" onclick="resetFunction()">Reset</button>
+        <button class="btn btn-danger Reset" >Reset</button>
     </div>
     </div>`
 

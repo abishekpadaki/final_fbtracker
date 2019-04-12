@@ -1,7 +1,8 @@
 (() => {
     "use strict";
-    let dataBase = window.dataBase;
-    let feedBack = window.feedBack;
+    let dataBase = JSON.parse(localStorage.getItem('dataBase'));
+    let feedBack = JSON.parse(localStorage.getItem('feedBack'));
+
     // let requesterOracleId = sessionStorage.getItem('requesterOracleId');
     let requestedForOracleId = sessionStorage.getItem('requestedForOracleId');
 
@@ -23,11 +24,11 @@
     let table = document.getElementById('feedBacks');
     console.log(feedBack[0]);
     for (let fb of feedBack) {
-        console.log(fb.OracleId,value.OracleId);
-        if (fb.OracleId == value.OracleId) {
+        console.log(fb.OracleId,requestedForOracleId);
+        if (fb.OracleId == requestedForOracleId) {
             table.innerHTML += `
                 <tr>
-                <td>${fb.OracleId}</td>
+                <td>${fb.SenderOracleID }</td>
                 <td>${fb.ClientFocusedDelivery}</td>
                 <td>${fb.Creativity}</td>
                 <td>${fb.OverallRating}</td>

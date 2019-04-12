@@ -3,7 +3,8 @@ var x= sessionStorage.getItem('st');
     
 console.log(x);
 
-var data = window.dataBase;
+// var data = window.dataBase;
+var data = JSON.stringify(localStorage.getItem('dataBase'));
 console.log(data);
 var match=[{}];
 

@@ -2,15 +2,22 @@
   "use strict"
   let role = sessionStorage.getItem('Role');
   if (role == "HR") {
-    let registrationsDB = window.registration;
-    let dataBase = window.dataBase;
+
+    // let registrationsDB = window.registration;
+    // let dataBase = window.dataBase;
+
+    let registrationsDB = JSON.parse(localStorage.getItem('registration'));
+    let dataBase = JSON.parse(localStorage.getItem('dataBase'));
 
     let oracleId = sessionStorage.getItem('OracleId');
-
+    let details;
     let notificationsCnt = document.getElementsByClassName('dropdown-content')[1];
+
     let registrations = registrationsDB.filter((val) => {
       return val.HrOracleId == oracleId;
     });
+
+
     let updateNotifications = (notifications) => {
       notificationsCnt.innerHTML = `<h3 class="requestfb">Registrations</h3> <hr>`;
       for (let i of notifications) {
@@ -30,9 +37,11 @@
           `
       }
       let badge = document.getElementsByClassName('badge')[1];
-      badge.style.visibility = "visible";
+      if(notifications.length)
+        badge.style.visibility = "visible";
       badge.innerHTML = notifications.length;
     }
+
 
     let addModal = (i)=>{
       let modal = document.getElementsByClassName('modal')[i];
@@ -57,7 +66,7 @@
     updateNotifications(registrations);
     notificationsCnt.addEventListener('click', (event) => {
       // console.log(event.target);
-      let data,flag,badge;
+      let data,flag;
       if (event.target.tagName === "B") {
         data = event.target.parentElement.getElementsByTagName('P');
         flag = 1;
@@ -69,14 +78,15 @@
       }
       
       if (flag) {
-        badge = document.getElementsByClassName('badge')[1];
-        badge.innerHTML = parseInt(badge.innerHTML) - 1;
-        let details = registrations.find((val) =>{
+        // badge = document.getElementsByClassName('badge')[1];
+        // badge.innerHTML = parseInt(badge.innerHTML) - 1;
+        details = registrations.find((val) =>{
           return val.OracleId == data[0].innerHTML;
         });
-        console.log(details);
-
-        let modalCnt = document.getElementsByClassName('modal-content')[2];
+        
+        // let modalCnt = document.getElementsByClassName('modal-content')[2];
+        let modalCnt = document.getElementById('modal-content');
+        console.log(modalCnt);
         modalCnt.innerHTML = ` 
                           <div class="modal-header">
                           <h4 style="color: red;">Registration Request</h4>
@@ -94,23 +104,48 @@
                           <div class="row">
                           <div class="col-6">
                               <button type="button" class="btn btn-success">
-                                  <i class="fas fa-check-circle"></i> </button>
+                                Accept  <i class="fas fa-check-circle"></i> </button>
                           </div>
                           <div class="col-6">
                               <button type="button" class="btn btn-danger">
-                                  <i class="far fa-times-circle"></i> </button>
+                                Reject  <i class="far fa-times-circle"></i> </button>
                           </div>
                       
                       </div>                         </div>                
         ` 
-        let modal = document.getElementsByClassName('modal')[2];
+      let modal = document.getElementsByClassName('modal')[2];
         modal.style.display = "block";
       }
 
-      if (parseInt(badge.innerHTML) == 0) {
-        badge.style.visibility = "hidden";
-      }
       addModal(2);
+    });
+
+    let flag = 0;
+    let modal = document.getElementsByClassName('modal')[2];
+    modal.addEventListener('click',(event)=>{
+        if(event.target.className == "btn btn-success" || event.target.className == "fas fa-check-circle"){
+            flag = 1;
+            let index = registrations.findIndex((val)=>{
+              return val.OracleId == details.OracleId;
+            })
+            registrations.splice(index,1);
+            localStorage.setItem('registration',JSON.stringify(registrations));
+            delete details.RequestorId;
+            dataBase.push(details);
+        }
+        else if(event.target.className == "btn btn-danger" || event.target.className == "far fa-times-circle"){
+          flag = 1;
+          let index = registrations.findIndex((val)=>{
+            return val.OracleId == details.OracleId;
+          })
+          registrations.splice(index,1);
+          localStorage.setItem('registration',JSON.stringify(registrations));
+        }
+
+        if(flag){          
+          updateNotifications(registrations);
+          modal.style.display = "none";
+        }
     });
   }
 })();

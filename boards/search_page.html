@@ -20,94 +20,58 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/dashboard.css">
-    
+    <link rel="stylesheet" href="../css/super_admin.css">    
     <script src="../jsonData/peopleDetails.js"></script>
 </head>
 
 <body>
     <nav class="navbar">
-        <div class="row col-md-12">
-            <div class="col-md-2">
-                <a href="#" class="pull-left"><img src="../assets/publicis-sapient.png"></a>
+        <div class="row col-md-12" style="height:100px;">
+            <div class="col-md-3">
+                <a href="#" class="pull-left"><img src="../assets/publicis-sapient1.png"></a>
             </div>
 
-            <div class="search_bar col-md-8">
+            <div class="search_bar col-md-5">
 
                 <div class="row ml-2 mt-4">
                     <div class="form-group has-search ">
                         <span class="fa fa-search form-control-feedback"></span>
-                        <input type="text" style="width:600px;" class="form-control" placeholder="Search Employee ...">
-                    </div>
-                    <div class="mx-4">
-                        <a href="#" class="notification">
-                            <i class="fas fa-bell"></i>
-                            <span class="badge">3</span>
-                        </a>
+                        <input type="text" class="form-control" id="searchTxt" placeholder="Search Employee ...">
                     </div>
                     <div>
-                        <a href="#" class="feedback">
-                            <span>FeedBacks</span>
-                            <span class="badge">10</span>
-                        </a>
+                        <button type="submit" onclick="searchFunction()" onsubmit="searchFunction()" class="btn btn-primary ml-3">Enter</button>
                     </div>
                 </div>
-                <div class="search_buttons row ml-1">
-                    <button type="button" class="btn btn-primary">
-                        <i class="fas fa-search"></i>&nbsp;&nbsp;OracleID
-                    </button> &nbsp; &nbsp;
-                    <button type="button" class="btn btn-primary">
-                        <i class="fas fa-search"></i> &nbsp;&nbsp;Name
-
-                    </button>
-                </div>
-
             </div>
 
-            <div class="log_out col-md-2 mt-4">
-                <a href="">Log Out</a>
+            <div class="col-md-4 mt-4">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="dropdown">
+                            <button class="btn btn-primary notification" id="dropDownBtn">
+                                <i class="fas fa-bell"></i>
+                                <span style="visibility:hidden" class="badge">0</span>
+                            </button>
+                            <div class="dropdown-content">
+                                <h3 class="requestfb">FeedBack Requests</h3>
+                            </div>
+
+                        </div>
+                        <div class="dropdown ml-2"></div>
+                    </div>
+                    <a href="../index.html"><i class="fas fa-sign-out-alt fa-lg"></i>
+                        Log Out</a>
+                </div>
+
             </div>
         </div>
     </nav>
 
     <div class="container-fluid main_body" id="main_body">
-        <!----div class="row">
-
-
-            <div class="card card_one col-md-6" style="width: 50rem;">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="profile_pic col-md-6">
-                            <img src="../images/avatar2.png" style="width:100px;height:100px;" align="left">
-                            <div style="text-align: center; font-size: 20px;">
-                            <b>Abishek Padaki</b><br>
-                            1027364748<br>
-                            Human Resources
-
-                        </div>
-
-                        </div>
-                        
-
-                        <div class="search_card_buttons col-md-4">
-                            <div class="self_fb_button" >
-                                <button type="button" class="btn btn-info">Request Feedback for Self</button>
-                            </div>
-                            <div class="other_fb_button">
-                                                <button type="button" class="btn btn-info">Request Feedback for someone else</button>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-        </div-->
-    </div>
-
-  
-    <script src="../js/searchPage.js"></script>
+    </div>  
+<script src="../js/searchPage.js"></script>
+    <script src="../js/search.js"></script>
+    
 </body>
 
 </html>

@@ -1,8 +1,10 @@
 (() => {
     "use strict";
+
     let role = sessionStorage.getItem("Role");
     let oracleId = sessionStorage.getItem("OracleId");
-    let feedBack = window.feedBack;
+
+    let feedBack = JSON.parse(localStorage.getItem('feedBack'));
 
     let name = document.getElementsByClassName("name")[0];
 
@@ -35,4 +37,12 @@
             <h3 class="requestfb">FeedBack Requests</h3>
         </div>`;
     }
+
+    
 })();
+
+function searchFunction() {
+    var x = document.getElementById("searchTxt").value;
+    sessionStorage.setItem('st',x);
+    document.location.href='search_page.html'
+}

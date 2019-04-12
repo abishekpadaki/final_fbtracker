@@ -1,93 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Convert JSON Data to HTML Table</title>
-    <style>
-        th, td, p, input {
-            font:14px Verdana;
-        }
-        table, th, td 
-        {
-            border: solid 1px #DDD;
-            border-collapse: collapse;
-            padding: 2px 3px;
-            text-align: center;
-        }
-        th {
-            font-weight:bold;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FeedBack</title>
+    <script src="../jsonData/peopleDetails.js"></script>
+    <script src="../jsonData/feedBackData.js"></script>
+    <link rel="stylesheet" href="../css/retriveFb.css">
 </head>
+
 <body>
-    <input type="button" onclick="CreateTableFromJSON()" value="Create Table From JSON" />
-    <p id="showData"></p>
+
+    <div class="container">
+        <!-- <div class="row">        
+        </div> -->
+        <table id="feedBacks">
+            <tr>
+                <th>Sender's OracleId</th>
+                <th>ClientFocusedDelivery</th>
+                <th>Creativity</th>
+                <th>OverallRating</th>
+                <th>Leadership</th>
+                <th>Openess</th>
+                <th>PeopleGrowth</th>
+                <th>Relationships</th>
+            </tr>
+        </table>
+    </div>
+    <script src="../js/displayDb.js"></script>
 </body>
 
-<script>
-    function CreateTableFromJSON() {
-      var feedBack = [{
-        "OracleId": 123457,
-        "OverallRating": 5,
-        "ClientFocusedDelivery":5,
-        "Creativity":5,
-        "Leadership":5,
-        "Openess":5,
-        "PeopleGrowth":5,
-        "Relationships":5,
-        
-    },
-    {
-        "OracleId": 123457,
-        "OverallRating": 5,
-        "ClientFocusedDelivery":5,
-        "Creativity":5,
-        "Leadership":5,
-        "Openess":5,
-        "PeopleGrowth":5,
-        "Relationships":5,
-        
-    }
-];
-
-        // EXTRACT VALUE FOR HTML HEADER. 
-        // ('Book ID', 'Book Name', 'Category' and 'Price')
-        var col = [];
-        for (var i = 0; i < feedBack.length; i++) {
-            for (var key in feedBack[i]) {
-                if (col.indexOf(key) === -1) {
-                    col.push(key);
-                }
-            }
-        }
-
-        // CREATE DYNAMIC TABLE.
-        var table = document.createElement("table");
-
-        // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
-
-        var tr = table.insertRow(-1);                   // TABLE ROW.
-
-        for (var i = 0; i < col.length; i++) {
-            var th = document.createElement("th");      // TABLE HEADER.
-            th.innerHTML = col[i];
-            tr.appendChild(th);
-        }
-
-        // ADD JSON DATA TO THE TABLE AS ROWS.
-        for (var i = 0; i < feedBack.length; i++) {
-
-            tr = table.insertRow(-1);
-
-            for (var j = 0; j < col.length; j++) {
-                var tabCell = tr.insertCell(-1);
-                tabCell.innerHTML = feedBack[i][col[j]];
-            }
-        }
-
-        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
-        var divContainer = document.getElementById("showData");
-        divContainer.innerHTML = "";
-        divContainer.appendChild(table);
-    }
-</script>
 </html>

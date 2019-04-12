@@ -8,13 +8,10 @@
 
     let addFeedBackContent = (feeds)=>{
         document.getElementById('feedBackCardtxt').innerHTML = feeds[0].Suggestions;        
-        document.getElementById('rating').innerHTML = feeds[0].Ratings;
+        document.getElementById('rating').innerHTML = feeds[0].OverallRating;
 
         growthAreas = feeds[0].GrowthAreas.split(',');    
         top5Stuff = feeds[0].Top5Stuff.split(',');
-
-        // document.getElementsByClassName('modal-content')[0].innerHTML += `<h4 style="color: red;">Growth Areas</h4>`
-        // document.getElementsByClassName('modal-content')[1].innerHTML += `<h4 style="color: red;">Top5Stuff</h4>`
 
         for(let i of growthAreas){
             document.getElementsByClassName('modal-content')[0].innerHTML += `<p>${i}</p>`
@@ -48,7 +45,7 @@
     console.log(role);
 
     if (role == "SuperAdmin") {
-        document.getElementById('cardTitle').innerHTML = `<p><b>Feedback from &nbsp;</b>${feedBack[0].FirstName}</p>`;
+        document.getElementById('cardTitle').innerHTML = `<p><b>Feedback from &nbsp;</b>${feedBack[0].FirstName} to ${feedBack[0].SenderOracleID}</p>`;
         addFeedBackContent(feedBack);        
         addModal(0);
         addModal(1);
@@ -63,9 +60,9 @@
         addFeedBackContent(feeds);
         addModal(0);
         addModal(1);
-        let cardBody = document.getElementsByClassName('card-body');
-        cardBody[0].addEventListener('click',()=>{
-            // document.location.href = "../boards/druva.html";
+        let viewFb = document.getElementsByClassName('viewFb')[0];
+        viewFb.addEventListener('click',()=>{
+            document.location.href = "../boards/feedBackTable.html";
         });
     }
 })();
