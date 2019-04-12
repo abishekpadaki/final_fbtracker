@@ -1,4 +1,13 @@
 .body{
-    font-family: Helvetica, Arial, sans-serif!important;
-    background:red!important;
+    font-family: Helvetica, Arial, sans-serif !important;
+    
+}
+
+h1{
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.textWidth{
+    width: 190px;
 }
