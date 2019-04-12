@@ -70,3 +70,7 @@
 }
 
 .close:hover { background: #00d9ff; }
+
+.modal-content{
+	width:50%;
+}
